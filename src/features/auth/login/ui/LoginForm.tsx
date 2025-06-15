@@ -34,7 +34,9 @@ export function LoginForm() {
         </Button>
         <div className="text-center mt-8">
           <Link to={'#'}>
-            <Button variant="link">Don't have an account? Sign up</Button>
+            <Button variant="link">
+              Don't have an account?<span className="font-semibold">Sign up</span>
+            </Button>
           </Link>
         </div>
       </form>
