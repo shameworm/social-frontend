@@ -35,8 +35,8 @@ export function FormField<T extends FieldValues>({
       control={form.control}
       name={name}
       render={({ field }) => (
-        <FormItem>
-          <FormLabel>{label}</FormLabel>
+        <FormItem className="mx-auto w-full lg:w-80">
+          <FormLabel className="text-base">{label}</FormLabel>
           <FormControl>
             <Input {...field} placeholder={placeholder} type={inputType} />
           </FormControl>
