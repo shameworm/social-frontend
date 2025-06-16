@@ -4,7 +4,7 @@ import { NavLinks } from './NavLinks';
 
 export function SideBarWidget() {
   return (
-    <aside className="w-96 mt-12 ml-20 mr-8">
+    <aside className="w-96 ml-20 mr-8">
       <Card className="bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-md">
         <CardHeader className="flex gap-4">
           <div>
