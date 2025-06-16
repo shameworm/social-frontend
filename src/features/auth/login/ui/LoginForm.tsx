@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { Form, FormField } from '@/shared/ui/form';
+import { Input } from '@/shared/ui/input';
 import { Button } from '@/shared/ui/button';
 
 import { useLogin } from '../hooks';
@@ -11,13 +12,17 @@ export function LoginForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
-        <FormField form={form} name="email" label="Email" placeholder="Email" />
         <FormField
           form={form}
-          name="password"
+          label="Email"
+          name="email"
+          renderInput={field => <Input {...field} type="email" />}
+        />
+        <FormField
+          form={form}
           label="Password"
-          placeholder="Password"
-          inputType="password"
+          name="password"
+          renderInput={field => <Input {...field} type="password" />}
         />
         <div className="text-right mr-3">
           <Link to={'#'}>
@@ -33,7 +38,7 @@ export function LoginForm() {
           Login
         </Button>
         <div className="text-center mt-8">
-          <Link to={'#'}>
+          <Link to={'/signup'}>
             <Button variant="link">
               Don't have an account?<span className="font-semibold">Sign up</span>
             </Button>

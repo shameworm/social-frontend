@@ -1,6 +1,5 @@
 import type { Control, FieldValues, FormState, Path } from 'react-hook-form';
 
-import { Input } from '@/shared/ui/input';
 import {
   FormField as ShadcnFormField,
   FormItem,
@@ -8,6 +7,8 @@ import {
   FormControl,
   FormMessage,
 } from './Form';
+
+import { cn } from '@/shared/lib/utils';
 
 type FormType<T extends FieldValues> = {
   control: Control<T> | undefined;
@@ -17,17 +18,18 @@ type FormType<T extends FieldValues> = {
 type FormFieldProps<T extends FieldValues> = {
   form: FormType<T>;
   name: Path<T>;
-  label: string;
-  placeholder: string;
-  inputType?: string;
+  label?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  renderInput: (field: any) => React.ReactNode;
+  className?: string;
 };
 
 export function FormField<T extends FieldValues>({
   form,
   name,
   label,
-  placeholder,
-  inputType = 'text',
+  renderInput,
+  className,
 }: FormFieldProps<T>) {
   if (!form) return null;
   return (
@@ -35,11 +37,9 @@ export function FormField<T extends FieldValues>({
       control={form.control}
       name={name}
       render={({ field }) => (
-        <FormItem className="mx-auto w-full lg:w-80">
-          <FormLabel className="text-base">{label}</FormLabel>
-          <FormControl>
-            <Input {...field} placeholder={placeholder} type={inputType} />
-          </FormControl>
+        <FormItem className={cn('mx-auto w-full lg:w-80', className)}>
+          {label && <FormLabel className="text-base">{label}</FormLabel>}
+          <FormControl>{renderInput(field)}</FormControl>
           {form?.formState?.errors[name] && (
             <FormMessage>{form.formState.errors[name]?.message?.toString()}</FormMessage>
           )}

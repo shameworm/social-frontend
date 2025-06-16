@@ -1,11 +1,12 @@
-import { LoginForm } from '@/features/auth/login';
+import { SingupForm } from '@/features/auth/singup';
+
 import { Card, CardContent } from '@/shared/ui/card';
 
-export function LoginPage() {
+export function SignupPage() {
   return (
     <Card className="mx-auto max-w-96">
       <CardContent className="mt-16 p-4">
-        <LoginForm />
+        <SingupForm />
       </CardContent>
     </Card>
   );
