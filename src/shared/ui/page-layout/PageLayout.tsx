@@ -17,7 +17,7 @@ export function PageLayout({
   ...properties
 }: Properties) {
   return (
-    <div className={cn('flex flex-col px-4 *:py-4 ', className)} {...properties}>
+    <div className={cn('flex flex-col *:py-4 ', className)} {...properties}>
       {topBar}
       {sideBar}
       <div className="flex gap-4">

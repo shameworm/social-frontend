@@ -9,8 +9,8 @@ export function Logo({ className }: LogoProps) {
   return (
     <div className={cn('flex justify-center', className)}>
       <div className="flex items-center space-x-4">
-        <Waypoints className="h-8 w-8 text-primary" />
-        <h1 className="font-extrabold font-sans text-lg text-foreground ">Connect Social</h1>
+        <Waypoints className="text-primary h-8 w-8" />
+        <h1 className="font-extrabold font-sans text-xl text-foreground">Connect Social</h1>
       </div>
     </div>
   );
