@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { RootLayout } from './layout';
+import { AuthLayout, MainLayout } from './layout';
 import { lazy } from 'react';
 
 const LoginPage = lazy(() =>
@@ -17,9 +17,12 @@ export const router = createBrowserRouter([
     id: 'root',
     children: [
       {
-        element: <RootLayout />,
+        element: <MainLayout />,
+        children: [{ index: true, element: <FeedPage /> }],
+      },
+      {
+        element: <AuthLayout />,
         children: [
-          { index: true, element: <FeedPage /> },
           { path: 'login', element: <LoginPage /> },
           { path: '/signup', element: <SingupPage /> },
         ],
