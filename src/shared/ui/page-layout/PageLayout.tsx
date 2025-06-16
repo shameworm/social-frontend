@@ -14,13 +14,13 @@ export function PageLayout({
   sideBar = null,
   className,
   children,
-  ...properties
+  ...props
 }: Properties) {
   return (
-    <div className={cn('flex flex-col *:py-4 ', className)} {...properties}>
+    <div className={cn('flex flex-col *:py-4 ', className)} {...props}>
       {topBar}
-      {sideBar}
       <div className="flex gap-4">
+        {sideBar}
         <main className="w-full">
           <Suspense fallback={<Skeleton />}>{children}</Suspense>
         </main>
