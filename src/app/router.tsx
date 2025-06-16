@@ -10,6 +10,8 @@ const SingupPage = lazy(() =>
   import('@/pages/singup').then(module => ({ default: module.SignupPage }))
 );
 
+const FeedPage = lazy(() => import('@/pages/feed').then(module => ({ default: module.FeedPage })));
+
 export const router = createBrowserRouter([
   {
     id: 'root',
@@ -17,6 +19,7 @@ export const router = createBrowserRouter([
       {
         element: <RootLayout />,
         children: [
+          { index: true, element: <FeedPage /> },
           { path: 'login', element: <LoginPage /> },
           { path: '/signup', element: <SingupPage /> },
         ],
