@@ -19,7 +19,7 @@ export function PageLayout({
   return (
     <div className={cn('flex flex-col *:py-4 ', className)} {...props}>
       {topBar}
-      <div className="flex justify-between gap-4 mt-12">
+      <div className="flex justify-between gap-4 mt-4">
         {sideBar}
         <main className="w-full">
           <Suspense fallback={<Skeleton />}>{children}</Suspense>

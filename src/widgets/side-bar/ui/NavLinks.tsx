@@ -40,11 +40,7 @@ export function NavLinks() {
         <li key={index}>
           <NavLink
             to={navLink.url}
-            className={({ isActive }) =>
-              `block px-4 py-2 rounded-md transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground ${
-                isActive ? 'bg-sidebar-primary text-sidebar-primary-foreground' : ''
-              }`
-            }
+            className="block px-4 py-2 rounded-md transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
           >
             <div className="flex items-center my-3 gap-2">
               {navLink.icon}
