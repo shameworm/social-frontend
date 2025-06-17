@@ -1,0 +1,1 @@
+export { SuggestedFriendsWidget } from './ui';
