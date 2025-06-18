@@ -22,9 +22,9 @@ export function UserProfileCard({
 }: UserProfileCardProps) {
   return (
     <Card>
-      <CardContent className="p-6">
+      <CardContent>
         <section className="flex flex-col gap-4">
-          <header className="flex justify-between items-start flex-wrap gap-4">
+          <header className="flex justify-between items-center flex-wrap gap-4">
             <div className="flex items-center gap-4">
               <UserAvatar image={image} fallback={fullname[0]} className="h-20 w-20" />
               <div>
@@ -32,7 +32,7 @@ export function UserProfileCard({
                 <p className="text-sm text-muted-foreground">{username}</p>
               </div>
             </div>
-            <dl className="flex gap-6 text-center">
+            <dl className="flex  gap-6 text-center">
               <div>
                 <dt className="text-sm text-muted-foreground">Posts</dt>
                 <dd className="text-lg font-medium">{posts}</dd>

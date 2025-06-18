@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
 import { NavLink } from 'react-router-dom';
-import { House, User, Send, Bell } from 'lucide-react';
+import { House, Send, Bell, UserPen, Contact, Settings } from 'lucide-react';
 
 import { Separator } from '@/shared/ui/separator';
 
@@ -12,14 +12,19 @@ type NavLinkProps = {
 
 const navLinks: NavLinkProps[] = [
   {
-    title: 'Home',
+    title: 'Feed',
     url: '/',
     icon: <House />,
   },
   {
     title: 'Profile',
     url: '/profile/my-id',
-    icon: <User />,
+    icon: <UserPen />,
+  },
+  {
+    title: 'Friends',
+    url: '/friends',
+    icon: <Contact />,
   },
   {
     title: 'Messages',
@@ -30,6 +35,11 @@ const navLinks: NavLinkProps[] = [
     title: 'Notifications',
     url: '/notifications',
     icon: <Bell />,
+  },
+  {
+    title: 'Settings',
+    url: '/settings',
+    icon: <Settings />,
   },
 ];
 
