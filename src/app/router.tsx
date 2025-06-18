@@ -12,13 +12,20 @@ const SingupPage = lazy(() =>
 
 const FeedPage = lazy(() => import('@/pages/feed').then(module => ({ default: module.FeedPage })));
 
+const UserProfilePage = lazy(() =>
+  import('@/pages/user-profile').then(module => ({ default: module.UserProfilePage }))
+);
+
 export const router = createBrowserRouter([
   {
     id: 'root',
     children: [
       {
         element: <MainLayout />,
-        children: [{ index: true, element: <FeedPage /> }],
+        children: [
+          { index: true, element: <FeedPage /> },
+          { path: '/profile/:userId', element: <UserProfilePage /> },
+        ],
       },
       {
         element: <AuthLayout />,
