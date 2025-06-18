@@ -1,5 +1,5 @@
 import { CreatePostForm } from '@/features/posts/create';
-import { Post } from '@/entities/post';
+import { PostCard } from '@/entities/post';
 
 import { mockPosts } from '../__mocks__/';
 
@@ -10,7 +10,7 @@ export function FeedPage() {
       <ul className="space-y-6">
         {mockPosts.map((post, index) => (
           <li key={index}>
-            <Post {...post} />
+            <PostCard {...post} />
           </li>
         ))}
       </ul>

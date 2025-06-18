@@ -4,7 +4,7 @@ import { UserAvatar } from '@/shared/ui/avatar';
 import { Card, CardHeader, CardContent } from '@/shared/ui/card';
 import { Button } from '@/shared/ui/button';
 
-type PostProps = {
+type PostCardProps = {
   image: string;
   fullname: string;
   username: string;
@@ -13,14 +13,14 @@ type PostProps = {
   postImage?: string;
 };
 
-export function Post({
+export function PostCard({
   image,
   fullname,
   username,
   postContent,
   postTimestamp,
   postImage,
-}: PostProps) {
+}: PostCardProps) {
   return (
     <Card className="p-4">
       <CardHeader className="p-0 flex items-start justify-between space-y-0">
