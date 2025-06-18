@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 
 import { cn } from '@/shared/lib/utils';
-
 import { Skeleton } from '../skeleton/Skeleton';
 
 type Properties = React.HTMLAttributes<HTMLDivElement> & {
@@ -19,14 +18,17 @@ export function PageLayout({
   ...props
 }: Properties) {
   return (
-    <div className={cn('flex flex-col *:py-4 ', className)} {...props}>
+    <div className={cn('flex flex-col min-h-screen bg-background', className)} {...props}>
       {topBar}
-      <div className="flex justify-between gap-8 mt-4 sm:mx-24">
-        {sideBar}
-        <main className="w-full">
-          <Suspense fallback={<Skeleton />}>{children}</Suspense>
-        </main>
-        {suggestedFriends}
+
+      <div className="flex-1">
+        <div className="mx-auto flex max-w-screen-xl justify-between gap-6 px-4 py-6">
+          {sideBar}
+          <main>
+            <Suspense fallback={<Skeleton />}>{children}</Suspense>
+          </main>
+          {suggestedFriends}
+        </div>
       </div>
     </div>
   );

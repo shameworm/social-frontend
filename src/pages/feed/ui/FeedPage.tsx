@@ -7,13 +7,9 @@ export function FeedPage() {
   return (
     <div className="space-y-6">
       <CreatePostForm />
-      <ul className="space-y-6">
-        {mockPosts.map((post, index) => (
-          <li key={index}>
-            <PostCard {...post} />
-          </li>
-        ))}
-      </ul>
+      {mockPosts.map((post, index) => (
+        <PostCard key={index} {...post} />
+      ))}
     </div>
   );
 }

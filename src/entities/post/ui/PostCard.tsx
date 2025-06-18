@@ -22,8 +22,8 @@ export function PostCard({
   postImage,
 }: PostCardProps) {
   return (
-    <Card className="p-4">
-      <CardHeader className="p-0 flex items-start justify-between space-y-0">
+    <Card>
+      <CardHeader className="flex items-start justify-between">
         <div className="flex gap-3">
           <UserAvatar image={image} fallback={fullname[0]} className="h-12 w-12" />
           <div className="flex flex-col">
@@ -39,7 +39,7 @@ export function PostCard({
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-4 p-0">
+      <CardContent>
         <p className="text-sm text-foreground">{postContent}</p>
         {postImage && (
           <div className="w-full overflow-hidden rounded-lg">

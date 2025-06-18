@@ -4,6 +4,7 @@ import { LogoutButton } from '@/features/auth/logout';
 
 import { Input } from '@/shared/ui/input';
 import { Logo } from '@/shared/ui/logo';
+import { Separator } from '@radix-ui/react-separator';
 
 export function TopBarWidget() {
   return (
@@ -16,6 +17,7 @@ export function TopBarWidget() {
         </div>
         <LogoutButton />
       </div>
+      <Separator />
     </header>
   );
 }
