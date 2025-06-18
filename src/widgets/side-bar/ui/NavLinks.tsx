@@ -18,7 +18,7 @@ const navLinks: NavLinkProps[] = [
   },
   {
     title: 'Profile',
-    url: '/profile',
+    url: '/profile/my-id',
     icon: <User />,
   },
   {

@@ -4,8 +4,8 @@ import { NavLinks } from './NavLinks';
 
 export function SideBarWidget() {
   return (
-    <aside className="hidden xl:block w-96">
-      <Card className="bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-md">
+    <aside className="hidden xl:block">
+      <Card className="bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-md w-72">
         <CardHeader className="flex gap-4">
           <div>
             <UserAvatar image="https://github.com/shadcn.png" fallback="JD" className="h-14 w-14" />

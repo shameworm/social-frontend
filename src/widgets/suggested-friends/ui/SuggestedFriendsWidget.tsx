@@ -5,8 +5,8 @@ import { SuggestedFriendItem } from './SuggestedFriendsItem';
 
 export function SuggestedFriendsWidget() {
   return (
-    <aside className="hidden xl:block w-96">
-      <Card className="bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-md">
+    <aside className="hidden xl:block ">
+      <Card className="w-80 bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-md ">
         <CardHeader>
           <h2 className="text-lg font-semibold">Suggested Friends</h2>
         </CardHeader>
