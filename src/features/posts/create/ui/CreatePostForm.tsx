@@ -12,11 +12,11 @@ export function CreatePostForm() {
   const { form, onSubmit } = useCreatePostForm();
 
   return (
-    <Card className="p-4">
-      <CardContent className="space-y-4 p-0">
+    <Card>
+      <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div className="flex gap-4">
+            <div className="flex items-center gap-4">
               <UserAvatar
                 image="https://github.com/shadcn.png"
                 fallback="JD"
@@ -25,11 +25,12 @@ export function CreatePostForm() {
               <FormField
                 form={form}
                 name="postContent"
+                className="flex-1"
                 renderInput={field => (
                   <Textarea
                     {...field}
                     placeholder="What's on your mind?"
-                    className="w-full min-h-[60px] resize-none"
+                    className="resize-none w-full"
                   />
                 )}
               />
