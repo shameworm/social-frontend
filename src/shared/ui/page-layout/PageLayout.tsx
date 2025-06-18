@@ -17,17 +17,32 @@ export function PageLayout({
   children,
   ...props
 }: Properties) {
+  const isCentered = !sideBar && !suggestedFriends;
+
   return (
     <div className={cn('flex flex-col min-h-screen bg-background', className)} {...props}>
       {topBar}
 
       <div className="flex-1">
-        <div className="mx-auto flex max-w-screen-xl justify-between gap-6 px-4 py-6">
-          {sideBar}
-          <main>
+        <div
+          className={cn(
+            'mx-auto max-w-screen-xl px-4 py-6',
+            isCentered
+              ? 'flex items-center justify-center min-h-[calc(100vh-15rem)]'
+              : 'flex justify-between gap-6'
+          )}
+        >
+          {isCentered ? (
             <Suspense fallback={<Skeleton />}>{children}</Suspense>
-          </main>
-          {suggestedFriends}
+          ) : (
+            <>
+              {sideBar}
+              <main>
+                <Suspense fallback={<Skeleton />}>{children}</Suspense>
+              </main>
+              {suggestedFriends}
+            </>
+          )}
         </div>
       </div>
     </div>
