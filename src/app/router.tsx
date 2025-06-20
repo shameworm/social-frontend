@@ -16,6 +16,10 @@ const UserProfilePage = lazy(() =>
   import('@/pages/user-profile').then(module => ({ default: module.UserProfilePage }))
 );
 
+const SettingsPage = lazy(() =>
+  import('@/pages/settings').then(module => ({ default: module.SettingsPage }))
+);
+
 export const router = createBrowserRouter([
   {
     id: 'root',
@@ -25,6 +29,7 @@ export const router = createBrowserRouter([
         children: [
           { index: true, element: <FeedPage /> },
           { path: '/profile/:userId', element: <UserProfilePage /> },
+          { path: '/settings', element: <SettingsPage /> },
         ],
       },
       {
