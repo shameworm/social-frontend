@@ -22,7 +22,6 @@ export function PageLayout({
   return (
     <div className={cn('flex flex-col min-h-screen bg-background', className)} {...props}>
       {topBar}
-
       <div className="flex-1">
         <div
           className={cn(

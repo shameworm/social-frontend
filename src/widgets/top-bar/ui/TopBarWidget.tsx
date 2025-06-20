@@ -9,9 +9,9 @@ import { Separator } from '@radix-ui/react-separator';
 export function TopBarWidget() {
   return (
     <header>
-      <div className="flex justify-between items-center mx-4 lg:mx-20 min-h-20">
+      <div className="flex justify-between items-center mx-auto max-w-screen-xl px-4 py-6">
         <Logo />
-        <div className="relative max-w-lg hidden lg:block">
+        <div className="relative w-full max-w-xl hidden lg:block -ml-32">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
           <Input className="pl-10" placeholder="Search" />
         </div>
