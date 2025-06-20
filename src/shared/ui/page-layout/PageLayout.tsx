@@ -28,7 +28,7 @@ export function PageLayout({
             'mx-auto max-w-screen-xl px-4 py-6',
             isCentered
               ? 'flex items-center justify-center min-h-[calc(100vh-15rem)]'
-              : 'flex justify-between gap-6'
+              : 'flex  gap-6'
           )}
         >
           {isCentered ? (
