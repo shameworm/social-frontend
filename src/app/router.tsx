@@ -2,6 +2,10 @@ import { createBrowserRouter } from 'react-router-dom';
 import { AuthLayout, MainLayout } from './layout';
 import { lazy } from 'react';
 
+const ErrorPage = lazy(() =>
+  import('@/pages/error').then(module => ({ default: module.ErrorPage }))
+);
+
 const LoginPage = lazy(() =>
   import('@/pages/login').then(module => ({ default: module.LoginPage }))
 );
@@ -23,6 +27,7 @@ const SettingsPage = lazy(() =>
 export const router = createBrowserRouter([
   {
     id: 'root',
+    errorElement: <ErrorPage />,
     children: [
       {
         element: <MainLayout />,
