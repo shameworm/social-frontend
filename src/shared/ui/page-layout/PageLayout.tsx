@@ -27,19 +27,27 @@ export function PageLayout({
           className={cn(
             'mx-auto max-w-screen-xl px-4 py-6',
             isCentered
-              ? 'flex items-center justify-center min-h-[calc(100vh-15rem)]'
-              : 'flex  gap-6'
+              ? 'flex items-center justify-center min-h-[calc(100vh-12rem)]'
+              : 'flex gap-4 md:gap-6'
           )}
         >
           {isCentered ? (
-            <Suspense fallback={<Skeleton />}>{children}</Suspense>
+            <main className="w-full max-w-md">
+              <Suspense fallback={<Skeleton className="min-h-[200px]" />}>{children}</Suspense>
+            </main>
           ) : (
             <>
-              {sideBar}
-              <main>
-                <Suspense fallback={<Skeleton />}>{children}</Suspense>
+              {sideBar && (
+                <aside className="hidden lg:block w-64 xl:w-72 flex-shrink-0">{sideBar}</aside>
+              )}
+              <main className="flex-1 min-w-0">
+                <Suspense fallback={<Skeleton className="min-h-[200px]" />}>{children}</Suspense>
               </main>
-              {suggestedFriends}
+              {suggestedFriends && (
+                <aside className="hidden xl:block w-64 xl:w-72 flex-shrink-0">
+                  {suggestedFriends}
+                </aside>
+              )}
             </>
           )}
         </div>
