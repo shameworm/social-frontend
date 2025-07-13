@@ -22,32 +22,42 @@ export function PostCard({
   postImage,
 }: PostCardProps) {
   return (
-    <Card>
-      <CardHeader className="flex items-start justify-between">
+    <Card className="transition-all duration-200 hover:shadow-md hover:shadow-black/15 gap-3">
+      <CardHeader className="relative pb-0">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute top-4 right-4 h-8 w-8 hover:bg-muted transition-colors"
+          aria-label="Post options"
+        >
+          <Ellipsis className="h-4 w-4" />
+        </Button>
+
         <div className="flex gap-3">
-          <UserAvatar image={image} fallback={fullname[0]} className="h-12 w-12" />
-          <div className="flex flex-col">
-            <h2 className="font-medium leading-tight">{fullname}</h2>
-            <span className="text-sm text-muted-foreground">{username}</span>
+          <UserAvatar image={image} fallback={fullname[0]} className="h-10 w-10" />
+          <div className="flex flex-col flex-1">
+            <h2 className="font-semibold leading-tight text-foreground">{fullname}</h2>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+              <span>{username}</span>
+              <span>•</span>
+              <span>{postTimestamp}</span>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-end text-right gap-1">
-          <Button variant="ghost" size="icon" className="h-8 w-8">
-            <Ellipsis className="h-4 w-4" />
-          </Button>
-          <p className="text-xs text-muted-foreground">{postTimestamp}</p>
         </div>
       </CardHeader>
 
       <CardContent>
-        <p className="text-sm text-foreground">{postContent}</p>
+        <p className="text-sm text-foreground leading-relaxed whitespace-pre-wrap">{postContent}</p>
         {postImage && (
-          <div className="w-full overflow-hidden rounded-lg">
-            <img
-              src={postImage}
-              alt="Post image"
-              className="mt-4 w-full h-80 object-cover rounded-md"
-            />
+          <div className="mt-3 w-full overflow-hidden rounded-lg bg-muted">
+            <div className="aspect-video w-full">
+              <img
+                src={postImage || '/placeholder.svg'}
+                alt="Post image"
+                className="h-full w-full object-cover transition-opacity duration-200"
+                loading="lazy"
+              />
+            </div>
           </div>
         )}
       </CardContent>
