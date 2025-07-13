@@ -14,12 +14,14 @@ export function SuggestedFriendsWidget() {
   }
 
   return (
-    <aside className="hidden xl:block ">
-      <Card className="w-80 bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-md ">
-        <CardHeader>
-          <h2 className="text-lg font-semibold">Suggested Friends</h2>
+    <aside className="hidden xl:block">
+      <Card className="w-72 bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
+        <CardHeader className="pb-3">
+          <h2 className="text-lg font-semibold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+            Suggested Friends
+          </h2>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-3 px-6 pb-6">
           {mockSuggestedFriends.map((sugFriend, index) => (
             <SuggestedFriendItem
               key={index}
