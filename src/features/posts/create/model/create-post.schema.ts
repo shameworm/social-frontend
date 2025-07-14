@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const createPostSchema = z.object({
   postContent: z
     .string()
-    .max(255, 'Post content must be at most 255 characters long')
+    .max(550, 'Post content must be at most 550 characters long')
     .nonempty('Post content is required'),
   imageFile: z
     .instanceof(File)
